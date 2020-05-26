@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ankerPaneel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FTD_Project.Controller.KaartspelController">
+   <children>
+      <AnchorPane fx:id="menuPaneel" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" visible="false">
+         <children>
+            <ImageView fx:id="menuVogel" fitHeight="230.0" fitWidth="260.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../images/normale%20vogel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="menuTekstballon" fitHeight="218.0" fitWidth="323.0" layoutX="866.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ballon1metRand.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="auteurs" layoutX="120.0" layoutY="646.0" style="-fx-font-family: bubbleGum;" text="Een spel door: Sam America &amp; Olivier Lenaerts" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="BubbleGum" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <Label fx:id="welkom" layoutX="924.0" layoutY="389.0" prefHeight="64.0" prefWidth="212.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Welkom bij FTD">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <Label fx:id="menuVraag" layoutX="942.0" layoutY="457.0" prefHeight="30.0" prefWidth="194.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Wat wil je doen?">
+               <font>
+                  <Font name="BubbleGum" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <Label fx:id="spelregelVeld" layoutX="95.0" layoutY="20.0" lineSpacing="2.0" prefHeight="606.0" prefWidth="1118.0" style="-fx-font-family: bubbleGum;" text="FTD&#10;Doel:&#10;het doel is zo weinig mogelijk slokken drinken en zo veel mogelijk slokken uitdelen.&#10;dit kan door de juiste kaart van de dealer te raden.&#10;&#10;Start van het spel:&#10;• er kan maximum met 10 spelers gespeeld worden.&#10;• Alle deelnemers gaan in een cirkel zitten.&#10;• geef iedereen zijn naam in (in de volgorde dat ze zitten!)&#10;• kloppen de namen? zoja, start het spel!&#10;&#10;Verloop van het spel:&#10;• De eerste speler wordt willekeurig gekozen.&#10;• Vervolgens is het altijd de speler links die aan de beurt is.&#10;• De dealer (vogel) neemt de eerste kaart uit een geschud pak kaarten.&#10;• De speler gokt een kaartwaarde. enkel de waarde van de kaart telt.&#10;• De kaartwaarde gaat van Aas (1) tot koning (13).&#10;• Als de speler fout gokt dan krijgt hij of zij een tweede kans. &#10;     • De vogel gaat vervolgens zeggen of de getrokken kaart hoger of lager is.&#10;• indien de speler nog steeds fout zit krijgt hij of zij het verschil in slokken bij.&#10;• De speler krijgt nu de keuze om slokken te drinken of om te wachten tot de volgende beurt.&#10;• als de speler juist gokt dan mag hij of zij slokken uitdelen aan een andere speler:&#10;     • vanaf de eerste keer juist: 3 slokken uitdelen.&#10;     • vanaf de tweede keer juist: 1 slok uitdelen.&#10;• indien er 3 keer na elkaar fout gegokt is krijgen alle spelers 2 slokken erbij.&#10;&#10;Einde van het spel:&#10;• Als alle kaarten op zijn is het spel gedaan. &#10;• Er wordt een slokkenbord weergegeven van elke speler. " textFill="WHITE" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Pane fx:id="spelerPaneel" layoutX="309.0" prefHeight="682.0" prefWidth="682.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labelAantalSpelers" layoutX="180.0" prefHeight="58.0" prefWidth="323.0" style="-fx-font-family: bubbleGum;" text="Met hoeveel wil je spelen?" textFill="WHITE">
+               <font>
+                  <Font name="BubbleGum" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="wieSpeelt" layoutX="195.0" prefHeight="58.0" prefWidth="294.0" style="-fx-font-family: bubbleGum;" text="Wie speelt er allemaal?" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="slokkenBijhoudenPaneel" layoutX="5.0" prefHeight="642.0" prefWidth="304.0" visible="false">
+         <children>
+            <Label fx:id="spelers" layoutX="5.0" layoutY="5.0" style="-fx-font-family: bubbleGum;" text="Spelers" textFill="WHITE" translateY="13.0">
+               <font>
+                  <Font name="BubbleGum" size="16.0" />
+               </font></Label>
+            <Label fx:id="aantalSlokken" layoutX="108.0" layoutY="5.0" style="-fx-font-family: bubbleGum;" text="Aantal slokken" textFill="WHITE" translateY="13.0">
+               <font>
+                  <Font name="BubbleGum" size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <AnchorPane fx:id="spelPaneel" layoutX="866.0" layoutY="336.0" prefHeight="363.0" prefWidth="433.0" visible="false">
+         <children>
+            <ImageView fx:id="spelVogel" fitHeight="230.0" fitWidth="260.0" layoutX="203.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../images/normale%20vogel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="spelTekstballon" fitHeight="218.0" fitWidth="323.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ballon1metRand.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="hoger" layoutX="70.0" layoutY="52.0" prefHeight="70.0" prefWidth="217.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Fout!&#10;raad hoger!" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lager" layoutX="70.0" layoutY="52.0" prefHeight="70.0" prefWidth="217.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Fout!&#10;raad lager!" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="eersteKeerJuist" layoutX="34.0" layoutY="50.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Proficiat!&#10;eerste keer juist" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="tweedeKeerJuist" layoutX="30.0" layoutY="51.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Flink zo!&#10;tweede keer juist" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="tweedeFout" layoutX="45.0" layoutY="52.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Hai toch&#10;nog steeds fout" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="drieSlokken" layoutX="35.0" layoutY="50.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Je mag 3&#10;slokken uitdelen" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="eenSlok" layoutX="58.0" layoutY="50.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Je mag 1&#10;slok uitdelen" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="uitdelen" layoutX="50.0" layoutY="30.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Aan wie &#10;wil je uitdelen?" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="gokje" layoutX="63.0" layoutY="55.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="welke kaart &#10;heb ik?" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="aantalFouten" layoutX="32.0" layoutY="61.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="het aantal fouten&#10;staat op:       " textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="drieKeerFout" layoutX="18.0" layoutY="46.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="3de keer fout!&#10;Collectief 2 slokken!" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="kaartVogel" fitHeight="230.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../images/kaart%20vogel.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="eindPaneel" blendMode="SRC_ATOP" prefHeight="700.0" prefWidth="1300.0" visible="false">
+         <children>
+            <ImageView fx:id="eindVogel" fitHeight="203.0" fitWidth="203.0" layoutX="1020.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="1.0">
+               <image>
+                  <Image url="@../images/zattevogel2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="opnieuwSpelen" layoutX="515.0" layoutY="550.0" style="-fx-font-family: bubbleGum;" text="Wil je opnieuw spelen?" textFill="WHITE" AnchorPane.leftAnchor="523.0" AnchorPane.rightAnchor="523.0">
+               <font>
+                  <Font name="BubbleGum" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="spelGedaan" alignment="TOP_LEFT" layoutX="530.0" layoutY="20.0" prefHeight="30.0" prefWidth="240.0" style="-fx-font-family: bubbleGum;" text="Het spel is gedaan" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="BubbleGum" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="eindTekstVogel" fitHeight="178.0" fitWidth="248.0" layoutX="932.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ballon1metRand.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="zatteTekst" alignment="TOP_LEFT" layoutX="976.0" layoutY="471.0" prefHeight="82.0" prefWidth="167.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Bedankt *Hik*&#10; voor *hik* &#10;het sp-sp-sspelennn&#10; *hik*" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="BubbleGum" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="ja" layoutX="589.0" layoutY="600.0" style="-fx-font-family: bubbleGum;" text="Ja" textFill="WHITE">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="nee" layoutX="655.0" layoutY="600.0" style="-fx-font-family: bubbleGum;" text="Nee" textFill="WHITE">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="zatteVogel2" fitHeight="167.0" fitWidth="167.0" layoutX="15.0" layoutY="532.8" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <image>
+                  <Image url="@../images/zattevogel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="eindTekstVogelSlokken" fitHeight="181.0" fitWidth="268.0" layoutX="104.0" layoutY="424.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ballon1metRand.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="zatteTekst1" alignment="TOP_LEFT" layoutX="130.0" layoutY="471.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Drink uw slokken op!&#10;anders zijt ge&#10;te woanig" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="BubbleGum" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="slokkenUitdelenPaneel" layoutX="3.0" layoutY="1.0" prefHeight="698.0" prefWidth="1185.0" visible="false" />
+      <Pane fx:id="jaNeePaneel" layoutX="917.0" layoutY="365.0" prefHeight="337.0" prefWidth="454.0" visible="false">
+         <children>
+            <Label fx:id="slokkenDrinken" layoutX="-20.0" layoutY="29.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Wil je slokken drinken?">
+               <font>
+                  <Font name="BubbleGum" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="jaDrink" layoutX="57.0" layoutY="63.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Ja">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="neeDrink" layoutX="121.0" layoutY="63.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="Nee">
+               <font>
+                  <Font name="BubbleGum" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="caraVogel" fitHeight="230.0" fitWidth="260.0" layoutX="152.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/caravogel.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <ImageView fx:id="drinkVogel" fitHeight="230.0" fitWidth="260.0" layoutX="152.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../images/drinkvogel.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Button fx:id="drink" layoutX="128.0" layoutY="68.0" mnemonicParsing="false" style="-fx-font-family: bubbleGum; -fx-text-fill: BLACK;" text="Drink" textAlignment="CENTER" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="hoeveel" layoutX="58.0" layoutY="29.0" style="-fx-text-fill: BLACK; -fx-font-family: bubbleGum;" text="hoeveel?" visible="false">
+               <font>
+                  <Font name="BubbleGum" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
